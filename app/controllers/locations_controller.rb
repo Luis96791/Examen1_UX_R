@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+
+	http_basic_authenticate_with name: "username", password: "password", except: [:index, :show]
+
 	def new
 		@location = Location.new
 	end
